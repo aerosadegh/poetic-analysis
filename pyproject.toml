@@ -1,0 +1,12 @@
+[tool.mypy]
+python_version = "3.11"
+# warn_return_any = true
+exclude = [
+  "*env/*", # TOML literal string (single-quotes, no escaping necessary)
+  "venv/bin/*.py", # TOML basic string (double-quotes, backslash and other characters need escaping)
+  "migrations/*",
+  "settings*", # ".py",  # TOML basic string (double-quotes, backslash and other characters need escaping)
+]
+ignore_missing_imports = true
+ignore_missing_imports_per_module = true
+warn_unused_configs = true
