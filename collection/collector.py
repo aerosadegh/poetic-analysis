@@ -51,7 +51,8 @@ async def main():
         while True:
             for _ in range(EPOCH):
                 tasks = [
-                    asyncio.create_task(get_data(session)) for _ in range(BATCH_SIZE)
+                    asyncio.create_task(get_data(session)) 
+                    for _ in range(BATCH_SIZE)
                 ]
                 await asyncio.gather(*tasks)
             print(f"{epoch_num=:03} Done ")
